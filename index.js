@@ -1,24 +1,14 @@
+const path = require("path");
+require("dotenv").config({ path: path.join(__dirname, ".env") });
 const TelegramBot = require("node-telegram-bot-api");
-const config = require("./configs"); //"1210752272:AAGHdV4W7Cf9xz0FcpSwXtpYwaf2nLB6Ths"
 const helper = require("./helpers");
 const kbButtons = require("./keyboard-buttons");
 const keyboards = require("./keyboards");
-const bot = new TelegramBot(config.TOKEN, {
+const bot = new TelegramBot(process.env.TOKEN, {
   polling: true,
 });
 
 helper.logStart();
-
-//обработка команд (пример)
-// bot.on("message", (message) => {
-//   const { id } = message.chat;
-//     bot
-//       .sendMessage(id, debug(message))
-//       .then(() => {
-//         bot.sendMessage(id, "Привет, " + message.from.first_name);
-//       })
-//       .catch((err) => console.log(err));
-// });
 
 bot.onText(/\/start/, (message) => {
   const { id } = message.chat;
@@ -35,7 +25,6 @@ bot.onText(/\/start/, (message) => {
           [
             {
               text: kbButtons.go,
-              // url: "https://dnmu.edu.ua"
               callback_data: "help",
             },
           ],
@@ -45,17 +34,8 @@ bot.onText(/\/start/, (message) => {
   );
 });
 
-// bot.onText(/\/help (.+)/, (message, [source, match]) => {
-//   const { id } = message.chat;
-//   bot.sendMessage(id, debug(match));
-// });
-
 bot.onText(/\/site/, (message) => {
   const { id } = message.chat;
-  //   bot.sendMessage(id, "https://dnmu.edu.ua", {
-  //     disable_web_page_preview: false,
-  //     // disable_notification: true;
-  //   });
   bot.sendMessage(id, `Щоб перейти на сайт клікни тут`, {
     reply_markup: {
       inline_keyboard: [[{ text: `Сайт універу`, url: "https://dnmu.edu.ua" }]],
@@ -65,12 +45,6 @@ bot.onText(/\/site/, (message) => {
 
 bot.onText(/\/help/, (message) => {
   const { id } = message.chat;
-  //   if (message.text === "Закрити") {
-  //     bot.sendMessage(id, "Закриваю, приходьте ще :)", {
-  //       reply_markup: { remove_keyboard: true },
-  //     });
-  //   } else if (message.text === "?!Якщо загубився") {
-  //   }
 
   bot.sendMessage(id, `Обери...`, {
     reply_markup: {
@@ -79,20 +53,6 @@ bot.onText(/\/help/, (message) => {
     },
   });
 });
-
-// bot.on("message", (message) => {
-//   const { id } = message.chat;
-
-//   bot.sendMessage(id, `Обери...`, {
-//     reply_markup: {
-//       inline_keyboard: [[{ text: `Сайт універу`, url: "https://dnmu.edu.ua" }]],
-//     },
-//   });
-// });
-
-// bot.on("callback_query", (query) => {
-//     bot.answerCallbackQuery(query.id,`Message`) //alert
-// });
 
 bot.on("callback_query", (query) => {
   const { chat, message, text } = query.message;
@@ -108,12 +68,6 @@ bot.on("callback_query", (query) => {
   }
 
   bot.answerCallbackQuery({ callback_query_id: query.id });
-});
-
-bot.on("inline_query", (query) => {
-  //   bot.answerInlineQuery(query.id, [], {
-  //     cache_time: 0,
-  //   });
 });
 
 bot.on("message", (message) => {
