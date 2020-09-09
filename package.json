@@ -7,7 +7,7 @@
     "start": "node index.js",
     "test": "nodemon index.js"
   },
-  "author": "",
+  "author": "Valeriia Chorna",
   "license": "ISC",
   "dependencies": {
     "node-telegram-bot-api": "^0.50.0"
