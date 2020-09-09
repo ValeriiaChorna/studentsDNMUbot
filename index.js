@@ -1,5 +1,5 @@
 const TelegramBot = require("node-telegram-bot-api");
-const config = require("./config"); //"1210752272:AAGHdV4W7Cf9xz0FcpSwXtpYwaf2nLB6Ths"
+const config = require("./configs"); //"1210752272:AAGHdV4W7Cf9xz0FcpSwXtpYwaf2nLB6Ths"
 const helper = require("./helpers");
 const kbButtons = require("./keyboard-buttons");
 const keyboards = require("./keyboards");
