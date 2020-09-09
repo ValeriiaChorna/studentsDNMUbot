@@ -4,13 +4,7 @@ const helper = require("./helpers");
 const kbButtons = require("./keyboard-buttons");
 const keyboards = require("./keyboards");
 const bot = new TelegramBot(config.TOKEN, {
-  polling: {
-    interval: 300,
-    autoStart: true,
-    params: {
-      timeout: 10,
-    },
-  },
+  polling: true,
 });
 
 helper.logStart();
