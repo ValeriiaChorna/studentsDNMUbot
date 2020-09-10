@@ -101,6 +101,10 @@ module.exports = {
         text: kbButtons.oficGroups_menu.elit,
         url: "https://t.me/memdnmu",
       },
+      {
+        text: kbButtons.oficGroups_menu.live,
+        url: "https://t.me/dnmu_live",
+      },
     ],
     [
       {
