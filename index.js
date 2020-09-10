@@ -20,7 +20,7 @@ console.log("url:", url);
 // });
 const bot = new TelegramBot(TOKEN, options);
 
-bot.setWebHook(`${url}bot${TOKEN}`);
+bot.setWebHook(`${url}/bot${TOKEN}`);
 helper.logStart();
 
 bot.onText(/\/start/, (message) => {
