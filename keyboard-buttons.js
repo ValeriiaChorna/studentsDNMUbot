@@ -2,11 +2,11 @@ module.exports = {
   back: "Повернутися",
   go: "GO!",
   main: {
-    sentMap: "⁉️Якщо розгубився",
+    sentMap: "⁉️Якщо загубився",
     sentListGroups: "👥Офіц.групи",
     sentTimetable: "🗓️Розклад",
     sentSections: "🏛️Сектори",
-    sentOtherData: "💾Дані",
+    sentOtherData: "💾Далі",
   },
   data_menu: {
     importantPlaces: "Важливі плейси🏁",
