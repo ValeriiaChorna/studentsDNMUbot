@@ -61,6 +61,7 @@ bot.onText(/\/help/, (message) => {
     reply_markup: {
       keyboard: keyboards.main_keyboard,
       one_time_keyboard: true,
+      resize_keyboard: true,
     },
   });
 });
@@ -73,6 +74,7 @@ bot.on("callback_query", (query) => {
         reply_markup: {
           keyboard: keyboards.main_keyboard,
           one_time_keyboard: true,
+          resize_keyboard: true,
         },
       });
       break;
@@ -117,7 +119,10 @@ bot.on("message", (message) => {
       break;
     case kbButtons.main.sentOtherData:
       bot.sendMessage(id, `Обери...`, {
-        reply_markup: { keyboard: keyboards.data_keyboard },
+        reply_markup: {
+          keyboard: keyboards.data_keyboard,
+          resize_keyboard: true,
+        },
       });
       break;
     case kbButtons.back:
@@ -125,6 +130,7 @@ bot.on("message", (message) => {
         reply_markup: {
           keyboard: keyboards.main_keyboard,
           one_time_keyboard: true,
+          resize_keyboard: true,
         },
       });
       break;
