@@ -18,7 +18,7 @@ const url = process.env.APP_URL; //|| "https://<app-name>.herokuapp.com:443";
 // });
 const bot = new TelegramBot(TOKEN, options);
 
-bot.setWebHook(`${url}/bot${TOKEN}`);
+bot.setWebHook(`${url}bot${TOKEN}`);
 helper.logStart();
 
 bot.onText(/\/start/, (message) => {
