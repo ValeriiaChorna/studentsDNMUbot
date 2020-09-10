@@ -42,13 +42,6 @@ module.exports = {
         callback_data: "advices",
       },
     ],
-    // [
-    //   {
-    //     text: `Моє місцезнаходження`,
-    //     request_location: true,
-    //   },
-    //   { text: `Надіслати мій контакт`, request_contact: true },
-    // ],
     [
       {
         text: kbButtons.back,
