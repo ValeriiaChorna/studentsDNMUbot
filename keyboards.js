@@ -72,12 +72,12 @@ module.exports = {
     [
       {
         text: kbButtons.section_menu.sciencTeam,
-        callback_data: "sciencTeam",
+        url: "https://t.me/sss_dnmu",
+        // callback_data: "sciencTeam",
       },
       {
         text: kbButtons.section_menu.inform,
-        // callback_data: "inform",
-        url: "https://t.me/sss_dnmu",
+        callback_data: "inform",
       },
     ],
   ],

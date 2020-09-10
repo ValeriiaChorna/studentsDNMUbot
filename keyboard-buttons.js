@@ -1,12 +1,12 @@
 module.exports = {
   back: "Повернутися",
-  go: "GO!",
+  go: "GO!🚀",
   main: {
     sentMap: "⁉️Якщо загубився",
     sentListGroups: "👥Офіц.групи",
     sentTimetable: "🗓️Розклад",
     sentSections: "🏛️Сектори",
-    sentOtherData: "💾Далі",
+    sentOtherData: "💾Додатково",
   },
   data_menu: {
     importantPlaces: "Важливі плейси🏁",
@@ -17,7 +17,7 @@ module.exports = {
     volonter: "Волонтерський сектор💫",
     cult_mass: "Культурно-масовий сектор💃🕺",
     inform: "Інформаційний сектор🗞",
-    sciencTeam: "Студентське наукове товариство ім. проф. М. Д. Довгялло",
+    sciencTeam: "Студентське наукове товариство ім. проф. М.Д.Довгялло",
   },
   oficGroups_menu: {
     news: "Офіційні новини ДНМУ📬",
