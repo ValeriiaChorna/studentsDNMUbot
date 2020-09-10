@@ -5,19 +5,20 @@ const helper = require("./helpers");
 const kbButtons = require("./keyboard-buttons");
 const keyboards = require("./keyboards");
 
-const TOKEN = process.env.TOKEN || "YOUR_TELEGRAM_BOT_TOKEN";
-// const options = {
-//   webHook: {
-//     port: process.env.PORT,
-//   },
-// };
-// const url = process.env.APP_URL || "https://<app-name>.herokuapp.com:443";
-const bot = new TelegramBot(TOKEN, {
-  polling: true,
-});
-// const bot = new TelegramBot(TOKEN, options);
+const TOKEN = process.env.TOKEN; //|| "YOUR_TELEGRAM_BOT_TOKEN";
+const options = {
+  webHook: {
+    port: process.env.PORT,
+  },
+};
+const url = process.env.APP_URL; //|| "https://<app-name>.herokuapp.com:443";
 
-// bot.setWebHook(`${url}/bot${TOKEN}`);
+// const bot = new TelegramBot(TOKEN, {
+//   polling: true,
+// });
+const bot = new TelegramBot(TOKEN, options);
+
+bot.setWebHook(`${url}/bot${TOKEN}`);
 helper.logStart();
 
 bot.onText(/\/start/, (message) => {
