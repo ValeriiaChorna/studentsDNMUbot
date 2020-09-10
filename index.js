@@ -11,7 +11,7 @@ const options = {
     port: process.env.PORT,
   },
 };
-const url = process.env.HEROKU_APP_NAME + `.herokuapp.com:443`;
+const url = `"https://${process.env.HEROKU_APP_NAME}.herokuapp.com:443`;
 // const url = process.env.APP_URL; //|| "https://<app-name>.herokuapp.com:443";
 
 // const bot = new TelegramBot(TOKEN, {
