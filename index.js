@@ -23,7 +23,7 @@ bot.setWebHook(`${url}/bot${TOKEN}`);
 helper.logStart();
 
 const visitor = ua("G-VECP1C9Y93");
-visitor.pageview("/").send();
+visitor.pageview("/start").send();
 
 bot.onText(/\/start/, (message) => {
   const { id } = message.chat;
