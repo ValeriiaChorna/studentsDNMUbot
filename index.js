@@ -23,7 +23,7 @@ bot.setWebHook(`${url}/bot${TOKEN}`);
 helper.logStart();
 
 const visitor = analytics("G-VECP1C9Y93");
-visitor.pageview("/start").send();
+visitor.pageview("/start", "https://t.me/DNMUfirstBot").send();
 
 bot.onText(/\/start/, (message) => {
   const { id } = message.chat;
