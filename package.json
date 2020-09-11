@@ -10,8 +10,9 @@
   "author": "Valeriia Chorna",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "node-telegram-bot-api": "^0.50.0",
-    "dotenv": "^8.2.0"
+    "universal-analytics": "^0.4.23"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
