@@ -22,7 +22,7 @@ const bot = new TelegramBot(TOKEN, options);
 bot.setWebHook(`${url}/bot${TOKEN}`);
 helper.logStart();
 
-const visitor = ua("G-VECP1C9Y93");
+const visitor = analytics("G-VECP1C9Y93");
 visitor.pageview("/start").send();
 
 bot.onText(/\/start/, (message) => {
