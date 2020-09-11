@@ -4,7 +4,6 @@ const TelegramBot = require("node-telegram-bot-api");
 const helper = require("./helpers");
 const kbButtons = require("./keyboard-buttons");
 const keyboards = require("./keyboards");
-const analytics = require("universal-analytics");
 
 const TOKEN = process.env.TOKEN; //|| "YOUR_TELEGRAM_BOT_TOKEN";
 const options = {
@@ -21,9 +20,6 @@ const bot = new TelegramBot(TOKEN, options);
 
 bot.setWebHook(`${url}/bot${TOKEN}`);
 helper.logStart();
-
-const visitor = analytics("G-VECP1C9Y93");
-visitor.pageview("/start", "https://t.me/DNMUfirstBot").send();
 
 bot.onText(/\/start/, (message) => {
   const { id } = message.chat;
