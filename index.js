@@ -19,8 +19,7 @@ const url = `https://${process.env.HEROKU_APP_NAME}.herokuapp.com`;
 const bot = new TelegramBot(TOKEN, options);
 
 const photoMap1 = path.join(__dirname, `./img/map1.jpg`);
-console.log(photoMap1);
-const photoMap2 = "";
+const photoMap2 = path.join(__dirname, `./img/map2.jpg`);
 
 bot.setWebHook(`${url}/bot${TOKEN}`);
 helper.logStart();
@@ -86,7 +85,7 @@ bot.on("message", (message) => {
   switch (message.text) {
     case kbButtons.main.sentMap:
       bot.sendPhoto(id, photoMap1);
-      // bot.sendPhoto(id, photoMap2);
+      bot.sendPhoto(id, photoMap2);
       break;
     case kbButtons.main.sentListGroups:
       bot.sendMessage(id, `Обери...`, {
