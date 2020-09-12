@@ -70,7 +70,8 @@ module.exports = {
       },
       {
         text: kbButtons.section_menu.inform,
-        callback_data: "inform",
+        // callback_data: "inform",
+        url: "https://t.me/pr2020sektor",
       },
     ],
   ],
