@@ -18,31 +18,28 @@ const url = `https://${process.env.HEROKU_APP_NAME}.herokuapp.com`;
 // });
 const bot = new TelegramBot(TOKEN, options);
 
+const photoMap1 = path.join(__dirname, `./img/map1.jpg`);
+console.log(photoMap1);
+const photoMap2 = "";
+
 bot.setWebHook(`${url}/bot${TOKEN}`);
 helper.logStart();
 
 bot.onText(/\/start/, (message) => {
   const { id } = message.chat;
-  bot.sendMessage(
-    id,
-    " Привіт! я помічник першокурсника ДНМУ. Я допоможу тобі розібратіся з дрібницями універу, щоб ти був прокачаним та не загубився."
-  );
-  bot.sendMessage(
-    id,
-    `Отже, Наш університет - це велика сім'я, яка об'єднує тих, хто  навчає та здобуває освіту.Якщо ти готовий, натисни "GO"`,
-    {
-      reply_markup: {
-        inline_keyboard: [
-          [
-            {
-              text: kbButtons.go,
-              callback_data: "help",
-            },
-          ],
+  bot.sendMessage(id, kbButtons.hi);
+  bot.sendMessage(id, kbButtons.hi2, {
+    reply_markup: {
+      inline_keyboard: [
+        [
+          {
+            text: kbButtons.go,
+            callback_data: "help",
+          },
         ],
-      },
-    }
-  );
+      ],
+    },
+  });
 });
 
 bot.onText(/\/site/, (message) => {
@@ -88,6 +85,8 @@ bot.on("message", (message) => {
 
   switch (message.text) {
     case kbButtons.main.sentMap:
+      bot.sendPhoto(id, photoMap1);
+      // bot.sendPhoto(id, photoMap2);
       break;
     case kbButtons.main.sentListGroups:
       bot.sendMessage(id, `Обери...`, {

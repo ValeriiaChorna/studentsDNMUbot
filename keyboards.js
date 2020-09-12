@@ -105,6 +105,7 @@ module.exports = {
         text: kbButtons.oficGroups_menu.books,
         url: "https://t.me/ifnmu_book",
       },
+      { text: kbButtons.oficGroups_menu.city, url: "https://t.me/tvoie_misto" },
     ],
   ],
 };
