@@ -105,6 +105,16 @@ bot.on("message", (message) => {
       bot.sendMessage(id, `Обери...`, {
         reply_markup: { inline_keyboard: keyboards.oficGroups_keyBoard },
       });
+      const user = {
+        first_name: message.from.first_name,
+        last_name: message.from.last_name,
+        username: message.from.username,
+        user_id: message.from.id,
+        message_id: message.message_id,
+        message_date: message.date,
+        message_text: message.text,
+      };
+      userModel.createUser(user);
       break;
     case kbButtons.main.sentTimetable:
       bot.sendMessage(
