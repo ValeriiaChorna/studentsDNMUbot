@@ -4,7 +4,7 @@ const TelegramBot = require("node-telegram-bot-api");
 const helper = require("./helpers");
 const kbButtons = require("./keyboard-buttons");
 const keyboards = require("./keyboards");
-const userModel = require('./users-model');
+const userModel = require("./users-model");
 
 const TOKEN = process.env.TOKEN; //|| "YOUR_TELEGRAM_BOT_TOKEN";
 const options = {
@@ -36,7 +36,7 @@ bot.onText(/\/start/, (message) => {
     message_id: message.message_id,
     message_date: message.date,
     message_text: message.text,
-  }
+  };
 
   bot.sendMessage(id, kbButtons.hi);
   bot.sendMessage(id, kbButtons.hi2, {
@@ -52,7 +52,7 @@ bot.onText(/\/start/, (message) => {
     },
   });
   // bot.sendMessage(id, JSON.stringify(message, null, 4));
-  await userModel.createUser(user);
+  userModel.createUser(user);
 });
 
 bot.onText(/\/site/, (message) => {
