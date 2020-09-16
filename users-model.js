@@ -2,12 +2,13 @@ import mongoose, { Schema } from "mongoose";
 // const { ObjectId } = mongoose.Types;
 
 const usersSchema = new Schema({
-  name: { type: String, require: true, maxlength: 255, minlength: 3 },
-  // email: { type: String, require: true, unique: true },
-  // phone: { type: String, require: true, max: 20, min: 7 },
-  // password: { type: String, require: true },
-  // subscription: { type: String, require: true, default: "free" },
-  // token: { type: String, require: true, default: "" },
+  first_name: { type: String },
+  last_name: { type: String },
+  username: { type: String },
+  user_id: { type: Number },
+  message_id: { type: Number },
+  message_date: { type: Number },
+  message_text: { type: String },
 });
 
 usersSchema.statics.createUser = createUser;
