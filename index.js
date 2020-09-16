@@ -27,7 +27,6 @@ helper.initDatabase();
 
 bot.onText(/\/start/, (message) => {
   const { id } = message.chat;
-  console.log(message);
 
   bot.sendMessage(id, kbButtons.hi);
   bot.sendMessage(id, kbButtons.hi2, {
@@ -42,6 +41,7 @@ bot.onText(/\/start/, (message) => {
       ],
     },
   });
+  bot.sendMessage(id, message);
 });
 
 bot.onText(/\/site/, (message) => {
