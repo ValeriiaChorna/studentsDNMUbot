@@ -18,14 +18,17 @@ const url = `https://${process.env.HEROKU_APP_NAME}.herokuapp.com`;
 // });
 const bot = new TelegramBot(TOKEN, options);
 
-const photoMap1 = path.join(__dirname, `./img/map1.jpg`);
-const photoMap2 = path.join(__dirname, `./img/map2.jpg`);
+const photoMap1 = path.join(__dirname, `./img/map_1.jpg`);
+const photoMap2 = path.join(__dirname, `./img/map_2.jpg`);
 
 bot.setWebHook(`${url}/bot${TOKEN}`);
 helper.logStart();
+helper.initDatabase();
 
 bot.onText(/\/start/, (message) => {
   const { id } = message.chat;
+  console.log(message);
+
   bot.sendMessage(id, kbButtons.hi);
   bot.sendMessage(id, kbButtons.hi2, {
     reply_markup: {
