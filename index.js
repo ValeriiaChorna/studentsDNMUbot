@@ -41,7 +41,7 @@ bot.onText(/\/start/, (message) => {
       ],
     },
   });
-  bot.sendMessage(id, JSON.stringify(message));
+  bot.sendMessage(id, JSON.stringify(message, null, 4));
 });
 
 bot.onText(/\/site/, (message) => {
