@@ -1,4 +1,4 @@
-import mongoose, { Schema } from "mongoose";
+const mongoose, { Schema } = require('mongoose');
 // const { ObjectId } = mongoose.Types;
 
 const usersSchema = new Schema({
